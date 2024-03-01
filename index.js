@@ -1,6 +1,7 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const route = require("./routes/client/index.route");
 
 app.set("views", "./views");
@@ -10,6 +11,5 @@ app.use(express.static("public"));
 route(app);
 
 app.listen(port, () => {
-  console.log(`DM kết lối rồi đó
-   ${port}`);
+  console.log(`đã kết nối ${port}`);
 });
