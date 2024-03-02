@@ -1,0 +1,9 @@
+.h1 {
+  color: rgb(3, 3, 227);
+}
+.badge.badge-unstart {
+  color: rgb(243, 15, 15);
+}
+.badge.badge-success {
+  color: rgb(0, 0, 255);
+}
