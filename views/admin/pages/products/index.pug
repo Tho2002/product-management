@@ -1,8 +1,20 @@
 extends ../../layouts/default.pug 
 block main
  h1 Danh sách sản phẩm
+ .car.mb3 
+  .car-header Bộ lọc và tìm kiếm
+  .car-body
+    button(
+        class="btn btn-sm m1-1 btn-outline-succes active"
+    ) Tất cả
+    button(
+        class="btn btn-sm m1-1 btn-outline-succes active"
+    ) Hoạt động
+    button(
+        class="btn btn-sm m1-1 btn-outline-succes active"
+    ) Dừng hoạt động
+ 
  table.table.table-hover.table-sm.caption-top
-  
   thead
     tr
       th(scope='col') STT
@@ -14,7 +26,6 @@ block main
   tbody
    each item,index in product
     tr
-      
       td #{index +1} 
       td
        img(
@@ -26,11 +37,10 @@ block main
       td #{item.title}
       td #{item.price}$
       td 
-       if(item.brand=="Apple")
-        a( class="badge badge-success" ) Hoạt động 
+       if (item.status=="active")
+        a(a="#" class="badge badge-success" )  Hoạt động 
        else 
-        a(class="badge badge-unstart" ) Dừng hoạt động  
-        
+        a(a="#" class="badge badge-unsuccess" ) Không Hoạt động
       td
        button(class="btn btn-warning btn-sm") Sửa
        button(class="btn btn-danger btn-sm m1-1") Xóa
